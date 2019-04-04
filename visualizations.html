@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
     <link rel="stylesheet" href="visualizations.css">
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="nv.d3.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -22,14 +24,15 @@
         </nav>
         <div id="graphs">
             <div class="graphContainer" id="timeContainer">
-                <p>Elapsed Time: </p>
-                <p>      00:00:00</p>
+                <p>Elapsed Time:</p>
+                <p>00:00:00</p>
             </div>
-            <div class="graphContainer"></div>
+            <div class="graphContainer"><svg id="container1"></svg></div>
             <div class="graphContainer"></div>
             <div class="graphContainer"></div>
             <div class="graphContainer"></div>
         </div>
     </main>
 </body>
+<script src="visualizations.js"></script>
 </html>
