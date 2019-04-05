@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
-    <link rel="stylesheet" href="visualizations.css">
     <script src="https://d3js.org/d3.v3.min.js"></script>
+    <link rel="stylesheet" href="visualizations.css">
     <script src="nv.d3.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.1/nv.d3.min.css"/>    
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.1/nv.d3.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <title>Document</title>
 </head>
+
 <body>
     <!--<header>
         <h1>Dashboard</h1>
@@ -17,10 +18,10 @@
     <main>
         <nav>
             <ul>
-               <li>Dashboard</li>
-                <li>Library 1</li>
-                <li>Library 2</li>
-                <li>Library 3</li>
+                <li>Dashboard</li>
+                <li><button id="nvd3">nvd3.js</button></li>
+                <li><button id="chartJs">Chart.js</button></li>
+                <li><button id="amCharts">AmCharts.js</button></li>
                 <li>Library 4</li>
             </ul>
         </nav>
@@ -29,12 +30,20 @@
                 <p>Elapsed Time:</p>
                 <p>00:00:00</p>
             </div>
-            <div class="graphContainer"><svg id="container1"></svg></div>
-            <div class="graphContainer"></div>
+            <div class="graphContainer">
+                <svg class="lineChart"></svg>
+                <canvas class="lineChart"></canvas>
+            </div>
+            <div class="graphContainer">
+                <svg class="pieChart"></svg>
+                <canvas class="pieChart"></canvas>
+            </div>
             <div class="graphContainer"></div>
             <div class="graphContainer"></div>
         </div>
     </main>
 </body>
-<script src="visualizations.js"></script>
+<script src="buttons.js"></script>
+<script src="nvd3Charts.js"></script>
+<script src="chartjsCharts.js"></script>
 </html>
