@@ -2,10 +2,10 @@
 nv.addGraph(function () {
     var chart = nv.models.lineChart()
         .margin({
-            left: 100
+            left: 80
         }) //Adjust chart margins to give the x-axis some breathing room.
         .useInteractiveGuideline(true) //We want nice looking tooltips and a guideline!
-        .transitionDuration(350) //how fast do you want the lines to transition?
+        .duration(350) //how fast do you want the lines to transition?
         .showLegend(true) //Show the legend, allowing users to turn on/off line series.
         .showYAxis(true) //Show the y-axis
         .showXAxis(true) //Show the x-axis
@@ -20,7 +20,7 @@ nv.addGraph(function () {
         .tickFormat(d3.format('.02f'));
 
     /* Done setting the chart up? Time to render it!*/
-    var myData = sinAndCos(); //You need data...
+    var myData = data(); //You need data...
 
     d3.select('#container1') //Select the <svg> element you want to render the chart in.   
         .datum(myData) //Populate the <svg> element with chart data...
@@ -35,7 +35,12 @@ nv.addGraph(function () {
 /**************************************
  * Simple test data generator
  */
-function sinAndCos() {
+var data1 = [];
+var data2 = [];
+var data3 = [];
+var data4 = [];
+
+function data() {
     var sin = [],
         sin2 = [],
         cos = [];
@@ -55,14 +60,22 @@ function sinAndCos() {
             y: .5 * Math.cos(i / 10)
         });
     }
-
+    
+    d3.json("dummyData.json", function (data) {
+        
+        data.forEach(function(d){
+            data1.push(d.d1)
+        })
+        
+    });
+    
     //Line chart data should be sent as an array of series objects.
     return [
         {
-            values: sin, //values - represents the array of {x,y} data points
-            key: 'Sine Wave', //key  - the name of the series.
+            values: data1, //values - represents the array of {x,y} data points
+            key: 'd1', //key  - the name of the series.
             color: '#ff7f0e' //color - optional: choose your own line color.
-    },
+    }/*,
         {
             values: cos,
             key: 'Cosine Wave',
@@ -73,6 +86,6 @@ function sinAndCos() {
             key: 'Another sine wave',
             color: '#7777ff',
             area: true //area - set to true if you want this line to turn into a filled area chart.
-    }
+    }*/
   ];
 }
