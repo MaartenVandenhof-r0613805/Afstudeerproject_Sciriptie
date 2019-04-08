@@ -1,10 +1,3 @@
-
-var lineData = [];
-var pieData = [];
-var data1 = [];
-var data2 = [];
-var data3 = [];
-var data4 = [];
 execute();
 /*These lines are all chart setup.  Pick and choose which chart features you want to utilize. */
 function drawGraph() {
@@ -27,9 +20,6 @@ function drawGraph() {
         chart.yAxis //Chart y-axis settings
             .axisLabel('Y-Value')
             .tickFormat(d3.format('.02f'));
-
-        /* Done setting the chart up? Time to render it!*/
-        //You need data...
 
         d3.select('.lineChart') //Select the <svg> element you want to render the chart in.   
             .datum(lineData) //Populate the <svg> element with chart data...
@@ -79,7 +69,7 @@ function execute() {
                 y
             };
             t++;
-            data1.push(co)
+            data1.push(co);
 
             //PieChartData
             var label = "";
@@ -93,6 +83,8 @@ function execute() {
             da3 = da3 + d.d3
             d4 = d4 + d.d4
         });
+        lijst = data1;
+        console.log(lijst)
         //DataLineChart
         lineData = [
             {
