@@ -4,6 +4,9 @@ var da3 = 0;
 var d4 = 0
 var data1 = [];
 var loaded = false;
+var graphsHTML = "";
+graphsHTML = document.getElementById("graphs").innerHTML;
+console.log(graphsHTML);
 d3.json("dummyData.json", function (data) {
             var t = 0;
             data.forEach(function (d) {
