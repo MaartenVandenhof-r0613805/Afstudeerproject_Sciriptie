@@ -1,7 +1,10 @@
 var lineChartCanvas = document.getElementsByClassName('lineChart')[1].getContext('2d');
 var pieChartCanvas = document.getElementsByClassName('pieChart')[1].getContext('2d');
+var t1 = 0;
+var t2 = 0;
 
 function createChartJs() {
+    t1 = new Date();
     var myChart = new Chart(lineChartCanvas, {
         type: 'line',
         data: {
@@ -33,4 +36,7 @@ function createChartJs() {
     type: 'pie',
     data: [5, 5]
 });
+    t2 = new Date();
+    var time = t2 - t1;
+    document.getElementById("graphTime").innerHTML = time + "ms";
 }

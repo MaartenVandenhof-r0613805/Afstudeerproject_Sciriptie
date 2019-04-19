@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="visualizations.css">
     <script src="nv.d3.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.1/nv.d3.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <title>Document</title>
 </head>
@@ -24,9 +25,20 @@
             </ul>
         </nav>
         <div id="graphs">
+          <h2 class="loadDataContainer" id="lDataHeader">Choose Library</h2>
+           <div class="loadDataContainer">
+                <p>Elapsed Time:</p>
+                <p id="d3Time">00:00:00</p>
+                <button class="lDataBtn" onclick="getDataD3()">Load With d3.js</button>
+           </div>
+           <div class="loadDataContainer">
+               <p>Elapsed Time:</p>
+                <p id="jQTime">00:00:00</p>
+                <button class="lDataBtn" onclick="getDataJq()">Load With jQuery</button>
+           </div>
             <div class="graphContainer" id="timeContainer">
                 <p>Elapsed Time:</p>
-                <p>00:00:00</p>
+                <p id="graphTime">00:00:00</p>
             </div>
             <div class="graphContainer">
                 <svg class="lineChart"></svg>
@@ -42,7 +54,6 @@
     </main>
 </body>
     <script src="GetData.js"></script>
-
 <script src="buttons.js"></script>
 <script src="nvd3Charts.js"></script>
 <script src="chartjsCharts.js"></script>

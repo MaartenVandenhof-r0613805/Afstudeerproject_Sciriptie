@@ -1,6 +1,8 @@
-execute();
 /*These lines are all chart setup.  Pick and choose which chart features you want to utilize. */
+var t1 = 0;
+var t2 = 0;
 function drawGraph() {
+    t1 = new Date();
     nv.addGraph(function () {
         var chart = nv.models.lineChart()
             .margin({
@@ -50,10 +52,12 @@ function drawGraph() {
 
         return chart2;
     });
-
+    t2 = new Date();
+    var time = t2 - t1;
+    document.getElementById("graphTime").innerHTML = time + "ms";
 }
 
-function execute() {
+/*function execute() {
     var d1 = 0;
     var d2 = 0;
     var da3 = 0;
@@ -113,4 +117,4 @@ function execute() {
       }];
         drawGraph();
     });
-}
+}*/
