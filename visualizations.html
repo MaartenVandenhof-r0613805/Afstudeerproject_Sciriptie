@@ -12,38 +12,24 @@
 </head>
 
 <body>
+    <nav>
+        <li><button id="dpButton">Data Processing</button></li>
+        <li><button id="dvButton">Data Visualisation</button></li>
+    </nav>
     <main>
-        <nav>
-            <ul>
-                <li>Dashboard</li>
-                <li><button id="loadData">Load Data</button></li>
-                <li><button id="nvd3">nvd3.js</button></li>
-                <li><button id="chartJs">Chart.js</button></li>
-                <li><button id="amCharts">AmCharts.js</button></li>
-                <li>Library 4</li>
-            </ul>
-        </nav>
-        <div id="graphs">
-            <div class="graphContainer" id="timeContainer">
-                <p>Elapsed Time:</p>
-                <p>00:00:00</p>
-            </div>
-            <div class="graphContainer">
-                <svg class="lineChart"></svg>
-                <canvas class="lineChart"></canvas>
-            </div>
-            <div class="graphContainer">
-                <svg class="pieChart"></svg>
-                <canvas class="pieChart"></canvas>
-            </div>
-            <div class="graphContainer"></div>
-            <div class="graphContainer"></div>
+        <div id="sideNav">
+            <button>D3.js</button>
+            <button>jQuery</button>
+            <button>Other</button>
+        </div>
+        <div id="mainContent">
+            <div class="container" id="topElement"></div>
+            <div class="container" id="container1"></div>
+            <div class="container" id="container2"></div>
+            <div class="container" id="container3"></div>
+            <div class="container" id="container4"></div>
         </div>
     </main>
 </body>
-    <script src="GetData.js"></script>
-
-<script src="buttons.js"></script>
-<script src="nvd3Charts.js"></script>
-<script src="chartjsCharts.js"></script>
+<script src="basics.js"></script>
 </html>
